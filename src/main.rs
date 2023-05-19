@@ -1,5 +1,5 @@
-use reqwest::Body;
 use reqwest::{self, multipart};
+use reqwest::{Body, StatusCode};
 use serde_json::{self, json};
 use tokio::fs::File;
 use tokio_util::codec::{BytesCodec, FramedRead};
@@ -118,9 +118,19 @@ impl ApiVideo {
 
         return res;
     }
+
+    async fn del_video(&self, vid: String) -> StatusCode {
+        let url = format!("https://ws.api.video/videos/{}", vid);
+        let client = reqwest::Client::new();
+        let res = client
+            .delete(url)
+            .bearer_auth(&self.token)
+            .send()
+            .await
+            .unwrap();
+        return res.status();
+    }
 }
 
 #[tokio::main]
-async fn main() {
-    
-}
+async fn main() {}
