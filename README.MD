@@ -1,4 +1,3 @@
-
 # api-video Rust Client
 This is unofficial client for [api.video](https://api.video) written in Rust.
 
@@ -12,4 +11,3 @@ cargo add api-video
 ```toml
 cargo add api-video
 ```
-
