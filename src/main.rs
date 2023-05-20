@@ -1,4 +1,4 @@
-use trydemo::api_video;
+use api_video;
 
 
 #[tokio::main]
