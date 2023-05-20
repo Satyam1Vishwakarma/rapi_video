@@ -6,7 +6,7 @@ It is the video infrastructure for product builders. Lightning fast video APIs f
 
 # Installation
 ```rust
-cargo add api-video
+cargo add api_video
 ```
 # Usage
 ```rust
@@ -20,4 +20,9 @@ async fn main(){
 
 }
 ```
+# Done
+
+VideoUpload<200MiB ✅|
+GetAllVideo ✅|
+DeleteAVideo ✅|
 
