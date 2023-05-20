@@ -71,7 +71,7 @@ pub mod rapi{
         /// # Example
         /// video_upload("myfirstvideo","G:\video.mp4")
     
-        async fn video_upload(&self, title: String, full_file_path: String) -> String {
+        pub async fn video_upload(&self, title: String, full_file_path: String) -> String {
             let z = &self.geturl().await;
     
             let url = format!("{}/videos", z);
@@ -108,7 +108,7 @@ pub mod rapi{
             return z;
         }
     
-        async fn all_video(&self, page_num: u8, page_size: u8) -> serde_json::Value {
+        pub async fn get_all_video(&self, page_num: u8, page_size: u8) -> serde_json::Value {
             let z = &self.geturl().await;
             let url = format!(
                 "{}/videos?currentPage={}&pageSize={}'",
@@ -129,7 +129,7 @@ pub mod rapi{
             return res;
         }
     
-        async fn del_video(&self, vid: String) -> StatusCode {
+        pub async fn del_video(&self, vid: String) -> StatusCode {
             let url = format!("https://ws.api.video/videos/{}", vid);
             let client = reqwest::Client::new();
             let res = client
