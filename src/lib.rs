@@ -1,5 +1,5 @@
 
-pub mod api_video{
+pub mod rapi{
 
     use reqwest::{self, multipart};
     use reqwest::{Body, StatusCode};
@@ -7,16 +7,19 @@ pub mod api_video{
     use tokio::fs::File;
     use tokio_util::codec::{BytesCodec, FramedRead};
     
+    #[warn(dead_code)]
     pub struct ApiVideo {
-        production: bool,
-        token: String,
+        pub production: bool,
+        pub token: String,
     }
     
+    #[warn(dead_code)]
     struct Uri {
         pro: String,
         sand: String,
     }
     
+    #[warn(dead_code)]
     impl ApiVideo {
         async fn geturl(&self) -> String {
             let z = Uri {
