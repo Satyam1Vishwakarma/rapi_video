@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2021"
 authors = ["Satyam1Vishwakarma"]
 description = "This is unofficial client for api.video written in Rust"
+repository = "https://github.com/Satyam1Vishwakarma/rapi_video"
 readme = "README.md"
 license-file = "LICENSE"
 
