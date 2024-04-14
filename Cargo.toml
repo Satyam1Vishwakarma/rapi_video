@@ -2,6 +2,12 @@
 name = "api_video"
 version = "0.1.0"
 edition = "2021"
+authors = ["Satyam1Vishwakarma"]
+description = "This is unofficial client for api.video written in Rust"
+readme = "README.md"
+license-file = "LICENSE"
+
+keywords = ["api", "video","api_video"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
