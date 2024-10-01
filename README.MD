@@ -8,7 +8,7 @@ It is the video infrastructure for product builders. Lightning fast video APIs f
 ```rust
 cargo add api_video
 ```
-# Usage
+# Usage Asynchrounous
 ```rust
 use api_video::rapi;
 
@@ -17,6 +17,19 @@ async fn main(){
     let api = rapi::ApiVideo{production:false,token:"token".to_string()};
     api.video_upload("myfirstvideo".to_string(), "G:\\foo.mp4".to_string()).await;
    let all_video = api.get_all_video(1, 2).await;
+
+}
+```
+
+# Usage Synchrounous
+```rust
+use api_video::rapi_sync;
+
+
+fn main(){
+    let api = rapi_sync::ApiVideo{production:false,token:"token".to_string()};
+    api.video_upload("myfirstvideo".to_string(), "G:\\foo.mp4".to_string());
+   let all_video = api.get_all_video(1, 2);
 
 }
 ```
