@@ -64,9 +64,9 @@ pub mod rapi {
             return videoid;
         }
 
-        ///Upload video to api.video
+        /// Upload video to api.video
         /// # Example
-        /// video_upload("myfirstvideo","G:\video.mp4")
+        /// video_upload("myfirstvideo","G:\video.mp4").await;
 
         pub async fn video_upload(&self, title: String, full_file_path: String) -> String {
             let z = &self.geturl().await;
@@ -105,6 +105,10 @@ pub mod rapi {
             return z;
         }
 
+        /// Get all videos
+        /// # Example
+        /// get_all_video().await;
+
         pub async fn get_all_video(&self) -> serde_json::Value {
             let z = &self.geturl().await;
             let url = format!("{}/videos", z);
@@ -123,6 +127,10 @@ pub mod rapi {
             return res;
         }
 
+        /// Delete a video
+        /// # Example
+        /// del_video("123".to_string()).await;
+
         pub async fn del_video(&self, videoid: String) -> StatusCode {
             let url = format!("https://ws.api.video/videos/{}", videoid);
             let client = reqwest::Client::new();
@@ -134,6 +142,10 @@ pub mod rapi {
                 .unwrap();
             return res.status();
         }
+
+        /// Thumbnail Upload
+        /// # Example
+        /// thumbnail_upload("123".to_string(),"/123".to_string()).await;
 
         pub async fn thumbnail_upload(
             &self,
@@ -169,6 +181,10 @@ pub mod rapi {
             return res;
         }
 
+        /// Watermark Upload
+        /// # Example
+        /// watermark_upload(,"/123".to_string());
+
         pub async fn watermark_upload(&self, full_file_path: String) -> serde_json::Value {
             let z = &self.geturl().await;
 
@@ -199,6 +215,10 @@ pub mod rapi {
             return res;
         }
 
+        /// Get Watermark
+        /// # Example
+        /// get_watermark().await;
+
         pub async fn get_watermark(&self) -> serde_json::Value {
             let z = &self.geturl().await;
 
@@ -216,6 +236,10 @@ pub mod rapi {
                 .unwrap();
             return res;
         }
+
+        /// Delete Watermark
+        /// # Example
+        /// watermark_delete("watermarkid".to_string()).await;
 
         pub async fn watermark_delete(&self, watermarkid: String) -> StatusCode {
             let z = &self.geturl().await;
@@ -235,6 +259,10 @@ pub mod rapi {
             return res.status();
         }
 
+        /// Get Caption
+        /// # Example
+        /// get_caption("videoid".to_string(),"language".to_string()).await;
+
         pub async fn get_caption(&self, videoid: String, lang: String) -> serde_json::Value {
             let z = &self.geturl().await;
 
@@ -252,6 +280,10 @@ pub mod rapi {
                 .unwrap();
             return res;
         }
+
+        /// Upload Caption
+        /// # Example
+        /// caption_upload("videoid".to_string(),"language".to_string(),"full file path".to_string()).await;
 
         pub async fn caption_upload(
             &self,
@@ -287,6 +319,10 @@ pub mod rapi {
                 .unwrap();
             return res;
         }
+
+        /// Delete Caption
+        /// # Example
+        /// caption_delete("videoid".to_string(),"language".to_string()).await;
 
         pub async fn caption_delete(&self, videoid: String, lang: String) -> StatusCode {
             let z = &self.geturl().await;
