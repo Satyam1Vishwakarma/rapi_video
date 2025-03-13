@@ -1,6 +1,6 @@
 [package]
 name = "api_video"
-version = "0.3.0"
+version = "0.3.3"
 edition = "2021"
 authors = ["Satyam1Vishwakarma"]
 description = "This is unofficial client for api.video written in Rust"
