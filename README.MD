@@ -1,14 +1,17 @@
-
 # api-video Rust Client
+
 This is unofficial client for [api.video](https://api.video) written in Rust.
 
 It is the video infrastructure for product builders. Lightning fast video APIs for integrating, scaling, and managing on-demand & low latency live streaming features in your app.
 
 # Installation
+
 ```rust
 cargo add api_video
 ```
+
 # Usage Asynchrounous
+
 ```rust
 use api_video::rapi;
 
@@ -22,6 +25,7 @@ async fn main(){
 ```
 
 # Usage Synchrounous
+
 ```rust
 use api_video::rapi_sync;
 
@@ -33,9 +37,16 @@ fn main(){
 
 }
 ```
+
 # Done
 
 VideoUpload<200MiB ✅|
 GetAllVideo ✅|
 DeleteAVideo ✅|
-
+ThumbnailUpload ✅|
+WatermarkUpload ✅|
+GetWatermark ✅|
+DeleteWatermark ✅|
+GetCaption ✅|
+UploadCaption ✅|
+DeleteCaption ✅|
